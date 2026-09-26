@@ -1,5 +1,5 @@
 /**
- * @name Mirror's Edge — City of Glass
+ * @name Mirror's Edge - City of Glass
  * @author Pascalelou
  * @description A fan-made Mirror's Edge-inspired theme: City of Glass, runner red and architectural wayfinding.
  * @version 2.2.0
@@ -12,8 +12,8 @@
   MIRROR'S EDGE / CITY OF GLASS
   Independent fan theme. No official EA or DICE affiliation.
 
-  Adjust these colors to tune the theme. No images, fonts, imports,
-  animation, or network requests are needed.
+  Adjust these colors to tune the theme. No external images, fonts,
+  imports, animations, or network requests are used.
 */
 :root {
   --me-red: #d00b2e;
@@ -26,8 +26,7 @@
   --me-rail: #20262d;
 }
 
-/* Discord's semantic colors are set for every appearance mode so the design
-   remains coherent if the user switches between light and dark settings. */
+/* Discord semantic color tokens used across the client UI. */
 :root,
 .theme-light,
 .theme-dark,
@@ -106,14 +105,14 @@
   --spoiler-revealed-background: #f1f2f0;
 }
 
-/* Neutralize Discord's optional background textures without touching media. */
+/* Base app colors. */
 body,
 #app-mount {
   background: var(--me-stone);
   color: var(--me-ink);
 }
 
-/* Server navigation: the city's dark structural spine. */
+/* Server list. */
 [class*="guilds_"] {
   background: var(--me-rail) !important;
 }
@@ -139,8 +138,7 @@ body,
   background: #f85a68;
 }
 
-/* A single decisive red navigation plane, borrowed from the game's menu
-   composition. White labels stay legible even with long channel names. */
+/* Channel sidebar. */
 [class*="sidebar_"]:has([class*="containerDefault_"]) {
   --interactive-normal: #ffecf0;
   --interactive-hover: #fff;
@@ -209,7 +207,7 @@ body,
   font-size: .8em;
 }
 
-/* Private messages use the same red navigation plane as server channels. */
+/* Direct messages sidebar. */
 [class*="sidebar_"]:has([class*="privateChannels_"]) {
   --interactive-normal: #ffecf0;
   --interactive-hover: #fff;
@@ -278,7 +276,7 @@ body,
   text-transform: uppercase;
 }
 
-/* User controls are a separate white instrument panel. */
+/* User controls panel. */
 [class*="panels_"] {
   --interactive-normal: var(--me-ink);
   --interactive-hover: var(--me-red-deep);
@@ -290,8 +288,7 @@ body,
   color: var(--me-ink);
 }
 
-/* An original rooftop and wayfinding pattern sits behind the conversation.
-   Its source is art/route-pattern.svg; the embedded copy keeps this theme portable. */
+/* Embedded SVG background pattern for the chat area. */
 [class*="chat_"] [class*="content_"] {
   background: var(--me-paper);
 }
@@ -335,7 +332,7 @@ body,
   letter-spacing: -.015em;
 }
 
-/* Messages, dividers and the composer use the same measured grid. */
+/* Messages, unread state, and composer. */
 [class*="message_"][class*="mentioned_"] {
   background: #fff1f2;
   border-left: 3px solid var(--me-red);
@@ -398,7 +395,7 @@ body,
   background: transparent;
 }
 
-/* Cards and popovers retain a consistent, crisp material language. */
+/* Dialogs and menus. */
 [role="dialog"],
 [role="menu"],
 [class*="userPopout_"] {
@@ -413,7 +410,7 @@ body,
   color: var(--me-red-deep);
 }
 
-/* Clear, accessible action states. */
+/* Brand buttons and focus states. */
 button[class*="lookFilled_"][class*="colorBrand_"] {
   background: var(--me-red);
   color: #fff;
@@ -436,11 +433,3 @@ a:not([class]) {
   outline-offset: 2px;
 }
 
-/* The graphic system is static by design. If Discord adds motion to these
-   controls, respect the operating system's reduced-motion preference. */
-@media (prefers-reduced-motion: reduce) {
-  [class*="guilds_"] [class*="wrapper_"] [class*="childWrapper_"],
-  [class*="channelTextArea_"] {
-    transition: none;
-  }
-}
