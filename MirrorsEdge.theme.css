@@ -1,0 +1,446 @@
+/**
+ * @name MirrorsEdge
+ * @author Pascalelou
+ * @description A fan-made Mirror's Edge-inspired theme: City of Glass, runner red and architectural wayfinding.
+ * @version 2.2.0
+ * @authorLink https://github.com/pascalelou
+ * @website https://github.com/pascalelou/Mirror-s-edge-discord-theme
+ * @source https://github.com/pascalelou/Mirror-s-edge-discord-theme/blob/main/MirrorsEdge.theme.css
+ */
+
+/*
+  MIRROR'S EDGE / CITY OF GLASS
+  Independent fan theme. No official EA or DICE affiliation.
+
+  Adjust these colors to tune the theme. No images, fonts, imports,
+  animation, or network requests are needed.
+*/
+:root {
+  --me-red: #d00b2e;
+  --me-red-deep: #a70726;
+  --me-ink: #20272d;
+  --me-paper: #fff;
+  --me-stone: #edf1f2;
+  --me-line: #d7dde0;
+  --me-muted: #59666f;
+  --me-rail: #20262d;
+}
+
+/* Discord's semantic colors are set for every appearance mode so the design
+   remains coherent if the user switches between light and dark settings. */
+:root,
+.theme-light,
+.theme-dark,
+.theme-darker,
+.theme-amoled {
+  color-scheme: light;
+  --background-primary: var(--me-paper);
+  --background-secondary: #f7f8f6;
+  --background-secondary-alt: #e9eceb;
+  --background-tertiary: var(--me-stone);
+  --background-accent: #dce2e4;
+  --background-floating: #fff;
+  --background-nested-floating: #fff;
+  --background-mobile-primary: var(--me-paper);
+  --background-mobile-secondary: #f7f8f6;
+  --bg-base-primary: var(--me-paper);
+  --bg-base-secondary: #f7f8f6;
+  --bg-base-tertiary: var(--me-stone);
+  --bg-surface-overlay: #fff;
+  --bg-surface-overlay-tmp: #fff;
+  --bg-surface-raised: #fff;
+  --chat-background: var(--me-paper);
+  --home-background: var(--me-paper);
+  --channeltextarea-background: #f4f5f3;
+  --chat-input-container-background: var(--me-paper);
+  --input-background: #f4f5f3;
+  --input-placeholder-text: var(--me-muted);
+  --card-primary-bg: #fff;
+  --card-secondary-bg: #f7f8f6;
+  --modal-background: #fff;
+  --modal-footer-background: #f7f8f6;
+  --background-message-hover: #f6f7f5;
+  --background-mentioned: #fff1f2;
+  --background-mentioned-hover: #ffe8eb;
+  --background-message-highlight: #fff1f2;
+  --background-message-highlight-hover: #ffe8eb;
+  --background-modifier-hover: #ebeeed;
+  --background-modifier-active: #e2e6e4;
+  --background-modifier-selected: #e8ebea;
+  --background-modifier-accent: var(--me-line);
+  --bg-mod-faint: #f4f5f3;
+  --bg-mod-subtle: #ebeeed;
+  --bg-mod-strong: #dce1df;
+  --border-faint: #e7e9e8;
+  --border-subtle: var(--me-line);
+  --border-strong: #b6bec1;
+  --divider-strong: var(--me-line);
+  --text-normal: var(--me-ink);
+  --text-primary: var(--me-ink);
+  --text-secondary: #414b55;
+  --text-muted: var(--me-muted);
+  --text-low-contrast: var(--me-muted);
+  --header-primary: var(--me-ink);
+  --header-secondary: #414b55;
+  --interactive-normal: #46515a;
+  --interactive-hover: var(--me-ink);
+  --interactive-active: var(--me-ink);
+  --interactive-muted: #7b858c;
+  --channel-icon: #69747a;
+  --channel-text-area-placeholder: #69747a;
+  --icon-primary: var(--me-ink);
+  --text-link: #a30e28;
+  --text-brand: var(--me-red-deep);
+  --button-primary-background: var(--me-ink);
+  --button-primary-background-hover: #373e46;
+  --button-primary-background-active: #15191e;
+  --button-primary-text: #fff;
+  --button-secondary-background: #e8ebea;
+  --button-secondary-background-hover: #dce1df;
+  --button-secondary-text: var(--me-ink);
+  --scrollbar-auto-thumb: #b7bec1;
+  --scrollbar-auto-track: transparent;
+  --scrollbar-thin-thumb: #b7bec1;
+  --scrollbar-thin-track: transparent;
+  --spoiler-hidden-background: #d8dddc;
+  --spoiler-revealed-background: #f1f2f0;
+}
+
+/* Neutralize Discord's optional background textures without touching media. */
+body,
+#app-mount {
+  background: var(--me-stone);
+  color: var(--me-ink);
+}
+
+/* Server navigation: the city's dark structural spine. */
+[class*="guilds_"] {
+  background: var(--me-rail) !important;
+}
+
+[class*="guilds_"] [class*="scroller_"] {
+  background: var(--me-rail) !important;
+}
+
+[class*="guilds_"] [class*="wrapper_"] [class*="childWrapper_"] {
+  background: #3b434c;
+  color: #fff;
+}
+
+[class*="guilds_"] [class*="wrapper_"]:hover [class*="childWrapper_"] {
+  background: var(--me-red);
+}
+
+[class*="guilds_"] [class*="pill_"] span {
+  background: #fff;
+}
+
+[class*="guilds_"] [class*="listItem_"]:has([aria-selected="true"]) [class*="pill_"] span {
+  background: #f85a68;
+}
+
+/* A single decisive red navigation plane, borrowed from the game's menu
+   composition. White labels stay legible even with long channel names. */
+[class*="sidebar_"]:has([class*="containerDefault_"]) {
+  --interactive-normal: #ffecf0;
+  --interactive-hover: #fff;
+  --interactive-active: #fff;
+  --channels-default: #ffe1e7;
+  --channel-icon: #ffe1e7;
+  --header-primary: #fff;
+  --header-secondary: #ffe1e7;
+  --text-normal: #fff;
+  --text-muted: #ffe1e7;
+  color: #fff;
+  background: var(--me-red);
+  border-right: 1px solid var(--me-red-deep);
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="sidebarList_"] > [class*="container_"] {
+  background: var(--me-red) !important;
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="sidebarList_"] > [class*="container_"] > [class*="container_"]:first-child {
+  background: var(--me-red-deep);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, .24);
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="scroller_"] {
+  background: transparent;
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="name_"] {
+  color: #fff2f4;
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="icon_"] {
+  color: #ffe2e8;
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="container_"][class*="clickable_"]:hover,
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="modeSelected_"] [class*="link_"] {
+  background: rgba(255, 255, 255, .14);
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="modeSelected_"] [class*="link_"] {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: inset 4px 0 var(--me-ink);
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="modeSelected_"] [class*="name_"] {
+  color: var(--me-red-deep);
+  font-weight: 700;
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="modeSelected_"] [class*="icon_"] {
+  color: var(--me-red-deep);
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="modeUnread_"] [class*="name_"] {
+  color: #fff;
+  font-weight: 700;
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"]) [class*="containerDefault_"] [class*="mainContent_"] {
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+/* Private messages use the same red navigation plane as server channels. */
+[class*="sidebar_"]:has([class*="privateChannels_"]) {
+  --interactive-normal: #ffecf0;
+  --interactive-hover: #fff;
+  --interactive-active: #fff;
+  --channels-default: #ffe1e7;
+  --text-normal: #fff;
+  --text-muted: #ffe1e7;
+  color: #fff;
+  background: var(--me-red) !important;
+  border-right: 1px solid var(--me-red-deep);
+}
+
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="sidebarList_"] > [class*="container_"] {
+  background: var(--me-red) !important;
+}
+
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="privateChannels_"],
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="scroller_"] {
+  background: transparent !important;
+}
+
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="name_"] {
+  color: #fff2f4;
+}
+
+[class*="privateChannels_"] [class*="selected_"] {
+  background: #fff !important;
+  border-radius: 2px;
+  box-shadow: inset 4px 0 var(--me-ink);
+}
+
+[class*="privateChannels_"] [class*="selected_"] [class*="name_"] {
+  color: var(--me-red-deep) !important;
+  font-weight: 700;
+}
+
+[class*="privateChannels_"] [class*="selected_"] [class*="subText_"] {
+  color: var(--me-muted) !important;
+}
+
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="searchBar_"] {
+  background: var(--me-red-deep) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .24);
+}
+
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="searchBar_"] button {
+  background: rgba(255, 255, 255, .14) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, .28);
+}
+
+[class*="privateChannels_"] [class*="linkButton_"] svg {
+  color: #fff;
+}
+
+[class*="sidebar_"] [class*="textBadge_"] {
+  background: var(--me-red-deep) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, .62);
+}
+
+[class*="sidebar_"]:has([class*="privateChannels_"]) [class*="privateChannelsHeader_"] {
+  color: #fff;
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* User controls are a separate white instrument panel. */
+[class*="panels_"] {
+  --interactive-normal: var(--me-ink);
+  --interactive-hover: var(--me-red-deep);
+  --interactive-active: var(--me-ink);
+  --text-normal: var(--me-ink);
+  --text-muted: var(--me-muted);
+  background: #f4f6f5;
+  border-top: 3px solid var(--me-ink);
+  color: var(--me-ink);
+}
+
+/* An original rooftop and wayfinding pattern sits behind the conversation.
+   Its source is art/route-pattern.svg; the embedded copy keeps this theme portable. */
+[class*="chat_"] [class*="content_"] {
+  background: var(--me-paper);
+}
+
+[class*="chat_"] [class*="scrollerContent_"] {
+  background-image:
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, .98) 30%, rgba(255, 255, 255, 0) 55%),
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NDAgNjIwIiBmaWxsPSJub25lIj4KICA8IS0tIE9yaWdpbmFsIGFic3RyYWN0IHdheWZpbmRpbmcgbW90aWY6IHJvb2Z0b3AgcGxhbmVzLCByb3V0ZSBhcnJvd3MsIGFuZCBhIGNpdHkgZ3JpZC4gLS0+CiAgPGcgc3Ryb2tlPSIjN2I5ZGE4IiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9Ii4xNiI+CiAgICA8cGF0aCBkPSJNNDIyIDBoMTg4bC05NCAxMTJIMzI4ek02MTAgMGgyMzBMNzI4IDEzMkg0OTh6Ii8+CiAgICA8cGF0aCBkPSJNODQwIDEzMiA2NTQgMzUwSDQ2OEw2NTQgMTMyek00NjggMzUwIDI5OCA1NTBoMTg2bDE3MC0yMDB6Ii8+CiAgICA8cGF0aCBkPSJNODQwIDE5MCA2NTYgNDA2TTg0MCAzMDYgNzQwIDQyNE01NzAgMCAzOTAgMjEyTTM0MiA0NzIgMjE4IDYyMCIvPgogICAgPHBhdGggZD0iTTcxMCAzNTB2MjcwTTc0MCA0MjR2MTk2TTQ4NCA1NTB2NzBNMTI0IDB2MTMyaDEzMiIvPgogIDwvZz4KICA8ZyBmaWxsPSIjZDAwYjJlIiBvcGFjaXR5PSIuMDk1Ij4KICAgIDxwYXRoIGQ9Im02MjAgMTc3IDc0LTg1IDMxIDI3LTc0IDg1LTMxIDM1LTY0LTd6Ii8+CiAgICA8cGF0aCBkPSJtNjY0IDIwMyA5MS0xNS00OCA3NC03LTI5LTI5IDh6Ii8+CiAgICA8cGF0aCBkPSJNOTQgNDEwaDczdjEyaC02MXY2MUg5NHoiLz4KICAgIDxwYXRoIGQ9Im0xMDkgNTAzIDM1LTM1IDEwIDEwLTM1IDM1eiIvPgogIDwvZz4KICA8ZyBzdHJva2U9IiNkMDBiMmUiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjE2Ij4KICAgIDxwYXRoIGQ9Ik02MzAgNDE2aDcybC0zNiAzN003MDIgNDE2bC0zNi0zNyIvPgogICAgPHBhdGggZD0iTTIwMCA1MzJoODRsLTQyIDQyIi8+CiAgPC9nPgogIDxnIGZpbGw9IiM3YjlkYTgiIG9wYWNpdHk9Ii4xOCI+CiAgICA8cGF0aCBkPSJNNzgyIDUwOGg4djhoLTh6TTgwMCA1MDhoOHY4aC04ek04MTggNTA4aDh2OGgtOHoiLz4KICAgIDxwYXRoIGQ9Ik03ODIgNTI2aDh2OGgtOHpNODAwIDUyNmg4djhoLTh6TTgxOCA1MjZoOHY4aC04eiIvPgogIDwvZz4KPC9zdmc+Cg=="),
+    linear-gradient(90deg, transparent 0 98.7%, rgba(115, 150, 162, .055) 98.7% 99%, transparent 99%),
+    linear-gradient(125deg, transparent 0 97.5%, rgba(208, 11, 46, .035) 97.5% 98%, transparent 98%);
+  background-size: 100% 100%, 840px 620px, 440px 440px, 540px 540px;
+  background-repeat: no-repeat, repeat, repeat, repeat;
+}
+
+[class*="chat_"] [class*="title_"] {
+  position: relative;
+  background: var(--me-paper) !important;
+  border-bottom: 1px solid var(--me-line);
+  box-shadow: none;
+}
+
+[class*="membersWrap_"],
+[class*="members_"] {
+  background: var(--me-paper) !important;
+}
+
+[class*="chat_"] [class*="title_"]::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 172px;
+  height: 4px;
+  background: var(--me-red);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+  pointer-events: none;
+}
+
+[class*="chat_"] [class*="title_"] [class*="titleWrapper_"] {
+  font-weight: 750;
+  letter-spacing: -.015em;
+}
+
+/* Messages, dividers and the composer use the same measured grid. */
+[class*="message_"][class*="mentioned_"] {
+  background: #fff1f2;
+  border-left: 3px solid var(--me-red);
+}
+
+[class*="message_"][class*="mentioned_"]::before {
+  display: none;
+}
+
+[class*="message_"]:hover {
+  background: #f6f7f5;
+}
+
+[class*="membersGroup_"] {
+  color: var(--me-muted);
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+[class*="reaction_"][class*="reactionMe_"] {
+  background: #fff1f2;
+  border-color: var(--me-red);
+  color: var(--me-red-deep);
+}
+
+[class*="divider_"][class*="isUnread_"] {
+  border-color: var(--me-red);
+}
+
+[class*="divider_"][class*="isUnread_"] [class*="content_"] {
+  background: var(--me-red);
+  color: #fff;
+  border-radius: 2px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+[class*="newMessagesBar_"] {
+  background: var(--me-red) !important;
+  color: #fff !important;
+  border-radius: 2px;
+}
+
+[class*="channelTextArea_"] {
+  border: 1px solid var(--me-line);
+  border-left: 3px solid var(--me-red);
+  border-radius: 4px;
+  background: #f4f5f3;
+  box-shadow: 0 4px 14px rgba(32, 37, 44, .045);
+}
+
+[class*="channelTextArea_"]:focus-within {
+  border-color: var(--me-red);
+  box-shadow: 0 0 0 2px rgba(207, 24, 50, .12);
+}
+
+[class*="channelTextArea_"] [class*="scrollableContainer_"] {
+  background: transparent;
+}
+
+/* Cards and popovers retain a consistent, crisp material language. */
+[role="dialog"],
+[role="menu"],
+[class*="userPopout_"] {
+  background: #fff;
+  border: 1px solid var(--me-line);
+  box-shadow: 0 18px 48px rgba(32, 37, 44, .16);
+}
+
+[role="menu"] [role="menuitem"]:hover,
+[role="menu"] [role="menuitem"]:focus-visible {
+  background: #f5e6e8;
+  color: var(--me-red-deep);
+}
+
+/* Clear, accessible action states. */
+button[class*="lookFilled_"][class*="colorBrand_"] {
+  background: var(--me-red);
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+button[class*="lookFilled_"][class*="colorBrand_"]:hover {
+  background: var(--me-red-deep);
+}
+
+a:not([class]) {
+  color: var(--me-red-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+:is(button, a, input, textarea, [role="button"], [role="menuitem"]):focus-visible {
+  outline: 2px solid var(--me-red);
+  outline-offset: 2px;
+}
+
+/* The graphic system is static by design. If Discord adds motion to these
+   controls, respect the operating system's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  [class*="guilds_"] [class*="wrapper_"] [class*="childWrapper_"],
+  [class*="channelTextArea_"] {
+    transition: none;
+  }
+}
