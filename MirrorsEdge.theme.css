@@ -849,10 +849,12 @@ button[class*="button_"][class*="secondary_"]:not([class*="critical-secondary_"]
 }
 
 [role="tooltip"] {
-  background: var(--me-rail);
-  color: #fff;
-  border: 1px solid #343c45;
-  border-radius: 2px;
+  background: var(--me-rail) !important;
+  color: #fff !important;
+  border: 1px solid #414b55 !important;
+  border-left: 3px solid var(--me-red) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 10px 28px rgba(18, 23, 28, .28) !important;
 }
 
 [class*="autocomplete_"] {
