@@ -439,6 +439,48 @@ a:not([class]) {
 }
 
 
+/* Current user settings modal. */
+[class*="modalContentInner_"] {
+  background: var(--me-paper);
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) {
+  background: var(--me-paper);
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="sidebar_"] {
+  background: #f4f6f5;
+  border-right: 1px solid var(--me-line);
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="navScroller_"] {
+  background: transparent;
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="sectionLabel_"] {
+  color: var(--me-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="item_"] {
+  border-radius: 2px;
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="item_"]:hover {
+  background: var(--me-red-soft);
+  color: var(--me-red-deep);
+}
+
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="item_"][class*="active_"] {
+  background: var(--me-paper);
+  color: var(--me-red-deep);
+  box-shadow: inset 3px 0 var(--me-red);
+  font-weight: 700;
+}
+
 /* Settings layout. */
 [class*="standardSidebarView_"] {
   background: var(--me-stone);
@@ -614,26 +656,26 @@ button[role="switch"][aria-checked="false"] {
 }
 
 /* Current Discord button styles. */
-button[class*="button_"][class*="primary_"] {
+button[class*="button_"][class*="primary_"]:not([class*="critical-primary_"]) {
   background: var(--me-red);
   border-color: var(--me-red);
   color: #fff;
   border-radius: 3px;
 }
 
-button[class*="button_"][class*="primary_"]:hover {
+button[class*="button_"][class*="primary_"]:not([class*="critical-primary_"]):hover {
   background: var(--me-red-deep);
   border-color: var(--me-red-deep);
 }
 
-button[class*="button_"][class*="secondary_"] {
+button[class*="button_"][class*="secondary_"]:not([class*="critical-secondary_"]) {
   background: var(--me-paper);
   border-color: var(--me-line);
   color: var(--me-ink);
   border-radius: 3px;
 }
 
-button[class*="button_"][class*="secondary_"]:hover {
+button[class*="button_"][class*="secondary_"]:not([class*="critical-secondary_"]):hover {
   background: var(--me-soft);
   border-color: #b8c0c4;
 }
