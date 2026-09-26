@@ -603,16 +603,20 @@ a:not([class]) {
 }
 
 /* Switches, sliders, checkboxes and radios. */
-button[role="switch"][aria-checked="true"] {
+[role="switch"][aria-checked="true"],
+[role="switch"][aria-checked="true"] [class*="switchIndicator_"] {
   background-color: var(--me-red) !important;
 }
 
-button[role="switch"][aria-checked="false"] {
+[role="switch"][aria-checked="false"],
+[role="switch"][aria-checked="false"] [class*="switchIndicator_"] {
   background-color: #cfd6d9 !important;
 }
 
-[class*="switchIndicator_"]:not([style*="background-color: rgba(0, 0, 0, 0.12)"]) {
-  background: var(--me-red) !important;
+[role="switch"] [class*="thumb_"] {
+  background: #fff !important;
+  color: #fff !important;
+  fill: #fff !important;
 }
 
 [class*="standardSidebarView_"] [class*="slider_"] [class*="bar_"],
@@ -643,6 +647,19 @@ button[role="switch"][aria-checked="false"] {
 
 [class*="radioGroupOption_"][data-selected] [class*="radioIndicator_"] {
   color: var(--me-red);
+}
+
+:is([class*="radioGroupOption_"], [class*="standaloneRadioIndicator_"])[data-selected] :is(
+  [class*="outerRadioBase_"],
+  [class*="outerRadioFill_"]
+) {
+  fill: none !important;
+  stroke: var(--me-red) !important;
+}
+
+:is([class*="radioGroupOption_"], [class*="standaloneRadioIndicator_"])[data-selected] [class*="innerDotRadio_"] {
+  fill: var(--me-red) !important;
+  stroke: var(--me-red) !important;
 }
 
 /* Tabs. */
@@ -774,6 +791,33 @@ button[class*="button_"][class*="secondary_"]:not([class*="critical-secondary_"]
 .user-profile-modal-v2:not(.custom-user-profile-theme) [class*="overlay_"] {
   background: var(--me-soft);
   border-color: var(--me-line);
+}
+
+
+/* Custom profile frame. User profile colors and banners remain untouched. */
+.user-profile-modal.custom-user-profile-theme,
+.user-profile-modal-v2.custom-user-profile-theme {
+  border: 1px solid #343c45;
+  box-shadow: var(--me-shadow);
+}
+
+:is(.user-profile-modal, .user-profile-modal-v2).custom-user-profile-theme [class*="tab_"][class*="selected_"] {
+  border-bottom-color: var(--me-red) !important;
+}
+
+:is(.user-profile-modal, .user-profile-modal-v2).custom-user-profile-theme [class*="tab_"][class*="selected_"]::after {
+  background: var(--me-red) !important;
+}
+
+/* Account row in the lower-left control panel. */
+[class*="panels_"] [class*="container_"]:has([class*="avatarWrapper_"]) {
+  background-color: #f4f6f5 !important;
+  background-image: none !important;
+}
+
+[class*="panels_"] [class*="container_"]:has([class*="avatarWrapper_"])::before,
+[class*="panels_"] [class*="container_"]:has([class*="avatarWrapper_"])::after {
+  background-image: none !important;
 }
 
 /* Friends and home. */
