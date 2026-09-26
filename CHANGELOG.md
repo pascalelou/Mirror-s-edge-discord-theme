@@ -18,4 +18,3 @@ All notable changes to MirrorsEdge are documented here.
 - Dark structural server rail.
 - Original embedded rooftop / wayfinding background motif.
 - Styled mentions, reactions, unread dividers, message composer, menus, dialogs, and focus states.
-- Reduced-motion handling.
