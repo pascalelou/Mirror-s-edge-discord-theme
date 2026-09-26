@@ -7,6 +7,10 @@
 - Added consistent styling for modals, quick switcher, menus, dropdowns, tooltips and autocomplete.
 - Added baseline styling for user profiles, Friends/Home, search results and the member list.
 - Kept the existing chat, server rail and channel sidebar layout unchanged.
+- Corrected OFF switch tracks so disabled states are no longer red.
+- Recolored selected radio controls from Discord blue to runner red.
+- Kept custom user profile colors/banners intact while adding a themed frame and tab accent.
+- Removed custom profile artwork from the lower-left account control row.
 
 All notable changes to MirrorsEdge are documented here.
 
