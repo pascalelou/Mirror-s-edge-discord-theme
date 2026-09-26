@@ -11,6 +11,10 @@
 - Recolored selected radio controls from Discord blue to runner red.
 - Kept custom user profile colors/banners intact while adding a themed frame and tab accent.
 - Removed custom profile artwork from the lower-left account control row.
+- Refined the server rail separators, utility buttons and status badges.
+- Reworked server hover tooltips with a dark panel and red accent edge.
+- Recolored channel unread markers on the red sidebar.
+- Added direct styling for the current inline switch indicator states.
 
 All notable changes to MirrorsEdge are documented here.
 
