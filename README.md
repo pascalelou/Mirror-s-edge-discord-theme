@@ -9,8 +9,8 @@ A fan-made Mirror's Edge-inspired Discord theme built around the visual language
 ## Features
 
 - City of Glass-inspired white / stone interface
-- Signature runner-red navigation surfaces and accents
-- Dark server rail for strong visual hierarchy
+- Runner-red navigation markers, selections and action accents
+- Light stone server rail with a red Mirror's Edge-inspired Home mark
 - Custom channel, DM, mention, unread, reaction, composer, menu, and focus states
 - Original embedded architectural / wayfinding SVG pattern
 - No external images, fonts, imports, animations, or network requests
@@ -45,7 +45,8 @@ Edit these variables near the top of `MirrorsEdge.theme.css`:
 | `--me-stone` | `#edf1f2` | Secondary architectural surface |
 | `--me-line` | `#d7dde0` | Borders and dividers |
 | `--me-muted` | `#59666f` | Muted text |
-| `--me-rail` | `#20262d` | Server navigation rail |
+| `--me-rail` | `rgba(247, 249, 249, .94)` | Server navigation rail |
+| `--me-tooltip` | `#fbfcfc` | Tooltip surface |
 
 ## Updating
 
@@ -55,7 +56,7 @@ The BetterDiscord listing, once approved, will also track updates committed to t
 
 ## Compatibility
 
-Discord changes its generated class names and UI structure regularly. If an update breaks part of the theme, please open an issue with:
+Discord changes its generated class names and UI structure regularly. The [development guide](./DEVELOPMENT.md) explains how to inspect a regression, and the [coverage matrix](./tests/COVERAGE.md) records what has been checked. If an update breaks part of the theme, please open an issue with:
 
 - the affected screen or component;
 - a screenshot;

@@ -2,18 +2,25 @@
 
 ## 2.3.0 - Unreleased
 
+- Reworked the server rail as a light stone surface and replaced the Discord Home glyph with a white runner mark on a red tile.
+- Matched server and toolbar tooltips to the light palette with dark text, a subtle border and a red wayfinding edge.
+- Rebalanced channel and DM navigation to light architectural surfaces with red selection markers.
+- Removed the account panel's inline gradient and profile video without changing profile popouts.
+- Mapped current brand colors to the theme palette and improved muted channel legibility.
+- Corrected the current settings sliders and quick switcher selection contrast in the live client.
+- Added a live Discord debugging guide and a coverage matrix for future visual checks.
 - Added styling for the user and server settings layout.
 - Added coverage for current switches, sliders, checkboxes, radios, tabs and buttons.
 - Added consistent styling for modals, quick switcher, menus, dropdowns, tooltips and autocomplete.
 - Added baseline styling for user profiles, Friends/Home, search results and the member list.
-- Kept the existing chat, server rail and channel sidebar layout unchanged.
+- Preserved Discord's chat and sidebar structure while changing their visual surfaces.
 - Corrected OFF switch tracks so disabled states are no longer red.
 - Recolored selected radio controls from Discord blue to runner red.
 - Kept custom user profile colors/banners intact while adding a themed frame and tab accent.
 - Removed custom profile artwork from the lower-left account control row.
 - Refined the server rail separators, utility buttons and status badges.
-- Reworked server hover tooltips with a dark panel and red accent edge.
-- Recolored channel unread markers on the red sidebar.
+- Reworked server hover tooltips with a light panel and red accent edge.
+- Recolored channel unread markers to runner red.
 - Added direct styling for the current inline switch indicator states.
 
 All notable changes to MirrorsEdge are documented here.
