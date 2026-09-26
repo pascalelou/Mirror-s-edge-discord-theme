@@ -143,6 +143,88 @@ body,
   background: #f85a68;
 }
 
+
+/* Server rail states. */
+[class*="guilds_"] {
+  border-right: 1px solid #343c45;
+}
+
+[class*="guilds_"] [class*="guildSeparator_"] {
+  background: #39424a;
+}
+
+[class*="guilds_"] [class*="circleIconButton_"] {
+  background: #2b333b;
+  color: #d7dde0;
+  border: 1px solid #39424a;
+  border-radius: 10px;
+}
+
+[class*="guilds_"] [class*="circleIconButton_"]:hover {
+  background: var(--me-red);
+  color: #fff;
+  border-color: var(--me-red);
+}
+
+[class*="guilds_"] [class*="circleIconButton_"][class*="selected_"] {
+  background: var(--me-red);
+  color: #fff;
+  border-color: var(--me-red);
+}
+
+[class*="guilds_"] [class*="iconBadge_"] {
+  background: var(--me-rail);
+  color: #fff;
+  border: 1px solid #4b555f;
+}
+
+[class*="guilds_"] [class*="iconBadge_"][class*="isCurrentUserConnected_"] {
+  background: var(--me-red);
+  border-color: var(--me-red);
+}
+
+/* Channel unread markers on the red sidebar. */
+[class*="sidebar_"]:has([class*="containerDefault_"])
+[class*="modeUnreadImportant_"] [class*="unread_"] {
+  background: #fff !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .18);
+}
+
+[class*="sidebar_"]:has([class*="containerDefault_"])
+[class*="modeConnected_"] [class*="unread_"] {
+  background: #fff !important;
+}
+
+/* Server-list and generic hover tooltips. */
+[role="tooltip"],
+[class*="tooltip_fa450d"],
+[class*="listItemTooltip_"] {
+  background: var(--me-rail) !important;
+  color: #fff !important;
+  border: 1px solid #414b55 !important;
+  border-left: 3px solid var(--me-red) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 10px 28px rgba(18, 23, 28, .28) !important;
+}
+
+[class*="tooltip_fa450d"] [class*="caretFill_"] {
+  fill: var(--me-rail) !important;
+}
+
+[class*="tooltip_fa450d"] [class*="caretStroke_"] {
+  stroke: #414b55 !important;
+}
+
+[class*="listItemTooltip_"] strong,
+[class*="listItemTooltip_"] [class*="name_"] {
+  color: #fff !important;
+}
+
+[class*="listItemTooltip_"] [class*="muteText_"],
+[class*="listItemTooltip_"] [class*="subtext_"] {
+  color: #aeb8bf !important;
+}
+
 /* Channel sidebar. */
 [class*="sidebar_"]:has([class*="containerDefault_"]) {
   --interactive-normal: #ffecf0;
@@ -603,6 +685,16 @@ a:not([class]) {
 }
 
 /* Switches, sliders, checkboxes and radios. */
+
+/* Current switch track uses inline background colors on the indicator. */
+[class*="switchIndicator_"][style]:not([style*="background-color: rgba(0, 0, 0, 0.12)"]) {
+  background-color: var(--me-red) !important;
+}
+
+[class*="switchIndicator_"][style*="background-color: rgba(0, 0, 0, 0.12)"] {
+  background-color: #cfd6d9 !important;
+}
+
 [role="switch"][aria-checked="true"],
 [role="switch"][aria-checked="true"] [class*="switchIndicator_"] {
   background-color: var(--me-red) !important;
