@@ -15,7 +15,6 @@ A fan-made Mirror's Edge-inspired Discord theme built around the visual language
 - Original embedded architectural / wayfinding SVG pattern
 - No external images, fonts, imports, animations, or network requests
 - Theme variables grouped at the top for quick customization
-- Reduced-motion friendly
 
 ## Installation
 
@@ -25,7 +24,7 @@ A fan-made Mirror's Edge-inspired Discord theme built around the visual language
 2. Open Discord → **User Settings** → **Themes**.
 3. Click **Open Themes Folder**.
 4. Copy `MirrorsEdge.theme.css` into that folder.
-5. Return to Discord and enable **Mirror's Edge — City of Glass**.
+5. Return to Discord and enable **Mirror's Edge - City of Glass**.
 
 BetterDiscord theme folders are typically:
 
@@ -61,7 +60,7 @@ Discord changes its generated class names and UI structure regularly. If an upda
 - the affected screen or component;
 - a screenshot;
 - your Discord channel (Stable / PTB / Canary if relevant);
-- the Mirror's Edge — City of Glass theme version.
+- the Mirror's Edge - City of Glass theme version.
 
 ## License
 
