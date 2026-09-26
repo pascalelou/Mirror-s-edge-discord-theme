@@ -1,6 +1,8 @@
-# MirrorsEdge
+# Mirror's Edge Discord Theme
 
-A fan-made **Mirror's Edge-inspired BetterDiscord theme** built around the visual language of the City of Glass: bright architectural surfaces, runner red accents, dark structural rails, and crisp wayfinding details.
+**A City of Glass-inspired theme for BetterDiscord, Vencord and Equicord**
+
+A fan-made Mirror's Edge-inspired Discord theme built around the visual language of the City of Glass: bright architectural surfaces, runner red accents, dark structural rails, and crisp wayfinding details.
 
 > Independent fan project. Not affiliated with, endorsed by, or associated with Electronic Arts (EA), DICE, Discord, or BetterDiscord. Mirror's Edge and related names are trademarks of their respective owners.
 
@@ -23,7 +25,7 @@ A fan-made **Mirror's Edge-inspired BetterDiscord theme** built around the visua
 2. Open Discord → **User Settings** → **Themes**.
 3. Click **Open Themes Folder**.
 4. Copy `MirrorsEdge.theme.css` into that folder.
-5. Return to Discord and enable **MirrorsEdge**.
+5. Return to Discord and enable **Mirror's Edge — City of Glass**.
 
 BetterDiscord theme folders are typically:
 
@@ -59,7 +61,7 @@ Discord changes its generated class names and UI structure regularly. If an upda
 - the affected screen or component;
 - a screenshot;
 - your Discord channel (Stable / PTB / Canary if relevant);
-- the MirrorsEdge theme version.
+- the Mirror's Edge — City of Glass theme version.
 
 ## License
 
