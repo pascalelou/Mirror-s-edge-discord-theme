@@ -46,6 +46,8 @@
   --background-accent: #dce2e4;
   --background-floating: #fff;
   --background-nested-floating: #fff;
+  --background-base-lower: var(--me-paper);
+  --background-gradient-chat: var(--me-paper);
   --background-mobile-primary: var(--me-paper);
   --background-mobile-secondary: #f7f8f6;
   --bg-base-primary: var(--me-paper);
@@ -60,6 +62,8 @@
   --chat-input-container-background: var(--me-paper);
   --input-background: #f4f5f3;
   --input-placeholder-text: var(--me-muted);
+  --input-border-active: var(--me-red);
+  --focus-primary: var(--me-red);
   --card-primary-bg: #fff;
   --card-secondary-bg: #f7f8f6;
   --modal-background: #fff;
@@ -437,7 +441,7 @@ body,
   background-repeat: no-repeat, repeat, repeat, repeat;
 }
 
-[class*="chat_"] [class*="title_"] {
+[class*="chat_"] [class*="title_"]:has([class*="toolbar_"]) {
   position: relative;
   background: var(--me-paper) !important;
   border-bottom: 1px solid var(--me-line);
@@ -449,7 +453,7 @@ body,
   background: var(--me-paper) !important;
 }
 
-[class*="chat_"] [class*="title_"]::after {
+[class*="chat_"] [class*="title_"]:has([class*="toolbar_"])::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -618,11 +622,26 @@ a:not([class]) {
   color: var(--me-red-deep);
 }
 
-[class*="modalContent_"]:has([class*="navScroller_"]) [class*="item_"][class*="active_"] {
+[class*="modalContent_"]:has([class*="navScroller_"]) [class*="item_"][class*="active_"]:not([aria-current="location"]) {
   background: var(--me-paper);
   color: var(--me-red-deep);
   box-shadow: inset 3px 0 var(--me-red);
   font-weight: 700;
+}
+
+/* Subsections already have a separate native track; keep accents off their text. */
+[class*="modalContent_"] [class*="navScroller_"] [class*="subnav_"] [role="link"] {
+  border-radius: 0;
+}
+
+[class*="modalContent_"] [class*="navScroller_"] [class*="subnav_"] [aria-current="location"] {
+  background: transparent;
+  color: var(--me-red-deep);
+  box-shadow: none;
+}
+
+[class*="modalContent_"] [class*="navScroller_"] [class*="subnav_"] [class*="thumbAnchor_"] {
+  background-color: var(--me-red);
 }
 
 /* Settings layout. */
@@ -735,7 +754,17 @@ a:not([class]) {
   [role="dialog"]
 ) :is([class*="inputWrapper_"], [class*="searchBar_"], [class*="inputContainer_"]):focus-within {
   border-color: var(--me-red);
+  outline-color: var(--me-red);
   box-shadow: 0 0 0 2px rgba(208, 11, 46, .12);
+}
+
+/* The wrapper owns the focus ring on composite dialog inputs. */
+[role="dialog"] :is([class*="inputWrapper_"], [class*="inputContainer_"]) input:focus-visible {
+  outline: none;
+}
+
+[role="dialog"] input[data-mana-component="text-input"]:focus-visible {
+  outline: none;
 }
 
 [class*="standardSidebarView_"] :is(input, textarea, [role="combobox"]) {
@@ -796,7 +825,7 @@ label:has(input[role="switch"]:not(:checked)) [data-mana-component="switch"] {
 
 [class*="radioGroupOption_"][data-selected] {
   background: var(--me-red-soft);
-  box-shadow: inset 3px 0 var(--me-red);
+  box-shadow: none;
 }
 
 [class*="radioGroupOption_"][data-selected] [class*="radioIndicator_"] {

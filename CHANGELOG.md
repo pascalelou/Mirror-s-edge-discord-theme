@@ -2,6 +2,11 @@
 
 ## 2.3.0 - Unreleased
 
+- Moved settings subsection accents onto Discord's separate navigation track and removed the inset stripe from selected radio rows so neither overlaps text or controls.
+- Mapped native input focus tokens to runner red and kept a single focus ring on composite dialog inputs.
+- Limited the chat header surface/accent to headers with toolbars, preserving readable titles on the dark call stage.
+- Mapped the current chat gradient/base surface tokens to the light palette, including the forum canvas.
+- Recorded the Windows narrow-window, thread/forum, search, image viewer, voice and dialog checks, including outstanding visual regressions and untested variants.
 - Improved offline member name contrast while keeping avatars subdued.
 - Matched the emoji search field's native focus border to runner red.
 - Replaced exact tooltip/account class hashes and inline switch color matching with component selectors and native checkbox state.
