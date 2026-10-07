@@ -2,6 +2,9 @@
 
 ## 2.3.0 - Unreleased
 
+- Improved offline member name contrast while keeping avatars subdued.
+- Matched the emoji search field's native focus border to runner red.
+- Replaced exact tooltip/account class hashes and inline switch color matching with component selectors and native checkbox state.
 - Reworked the server rail as a light stone surface and replaced the Discord Home glyph with a white runner mark on a red tile.
 - Matched server and toolbar tooltips to the light palette with dark text, a subtle border and a red wayfinding edge.
 - Rebalanced channel and DM navigation to light architectural surfaces with red selection markers.

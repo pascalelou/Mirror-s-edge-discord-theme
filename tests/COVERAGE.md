@@ -1,6 +1,6 @@
 # Discord coverage
 
-Live pass: Discord Stable build 621195, BetterDiscord, macOS, 2026-09-26.
+Baseline live pass: Discord Stable build 621195, BetterDiscord, macOS, 2026-09-26. The targeted Windows recheck below does not replace this full matrix.
 
 Status means **verified** (checked in the live client during this pass), **styled** (CSS exists but the full view was not checked), or **pending** (requires a live check). It is not a claim of support for every Discord build.
 
@@ -31,3 +31,15 @@ Status means **verified** (checked in the live client during this pass), **style
 | BetterDiscord settings | Pending | Check plugin and theme settings in the current client |
 
 When updating a row, note the Discord build and a short description of any regression. Keep screenshots local unless identifying details have been removed.
+
+## Targeted recheck - 2026-10-08
+
+Discord Stable build 637730 (59c3d22), BetterDiscord 1.14.1, Windows, theme 2.3.0. The installed CSS matched the repository copy after live reload.
+
+- Offline members: verified readable names at rest, with subdued avatars and distinct online/offline groups. Removed the native row opacity of 0.3; user role colors are not forcibly overridden.
+- Emoji search: verified a red focus border and a neutral border after losing focus, without selecting or sending an emoji. The native input uses `--input-border-active` and `data-focus-within`.
+- Discord switches: verified existing ON and OFF controls on the Developer page show red and grey respectively without changing their values. The native `input[role="switch"]` is inside the same label as its visual indicator; selectors now use `:checked` instead of an exact inline RGBA value.
+- Account controls: verified the lower-left row remains neutral and its controls remain visible. The decorative `fitInAccount_` container has `aria-hidden="true"`; the selector no longer includes a generated hash and remains scoped to the account panel.
+- Tooltip selectors: removed the exact hash in favor of the tooltip class prefix, retaining the semantic `role="tooltip"` selector. A full tooltip pass remains outstanding.
+
+Next pass: narrow windows, threads/forums, search, attachments and dialogs. These views were not validated by this targeted recheck.

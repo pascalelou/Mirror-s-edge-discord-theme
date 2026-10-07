@@ -232,7 +232,7 @@ body,
 
 /* Light hover cards, including server and toolbar tooltips. */
 [role="tooltip"],
-[class*="tooltip_fa450d"],
+:is([class^="tooltip_"], [class*=" tooltip_"]),
 [class*="listItemTooltip_"] {
   --background-floating: var(--me-tooltip);
   --text-normal: var(--me-ink);
@@ -247,12 +247,12 @@ body,
 }
 
 [role="tooltip"] [class*="caretFill_"],
-[class*="tooltip_fa450d"] [class*="caretFill_"] {
+:is([class^="tooltip_"], [class*=" tooltip_"]) [class*="caretFill_"] {
   fill: var(--me-tooltip) !important;
 }
 
 [role="tooltip"] [class*="caretStroke_"],
-[class*="tooltip_fa450d"] [class*="caretStroke_"] {
+:is([class^="tooltip_"], [class*=" tooltip_"]) [class*="caretStroke_"] {
   stroke: var(--me-line) !important;
 }
 
@@ -566,7 +566,18 @@ a:not([class]) {
   outline-offset: 2px;
 }
 
-/* Picker search fields already draw a visible focus ring around the full field. */
+/* Use the native input tokens and keep one focus ring around picker search fields. */
+[class*="contentWrapper_"] {
+  --input-border-active: var(--me-red);
+  --focus-primary: var(--me-red);
+}
+
+[class*="contentWrapper_"] [data-focus-within="true"][data-error="false"]:has(> input[data-mana-component="text-input"]) {
+  border-color: var(--me-red);
+  outline-color: var(--me-red);
+  box-shadow: 0 0 0 1px var(--me-red);
+}
+
 [class*="contentWrapper_"] input:focus-visible {
   outline: none;
 }
@@ -737,12 +748,12 @@ a:not([class]) {
 
 /* Switches, sliders, checkboxes and radios. */
 
-/* Current switch track uses inline background colors on the indicator. */
-[class*="switchIndicator_"][style]:not([style*="background-color: rgba(0, 0, 0, 0.12)"]) {
+/* Current switches keep their native checkbox inside the indicator's label. */
+label:has(input[role="switch"]:checked) [data-mana-component="switch"] {
   background-color: var(--me-red) !important;
 }
 
-[class*="switchIndicator_"][style*="background-color: rgba(0, 0, 0, 0.12)"] {
+label:has(input[role="switch"]:not(:checked)) [data-mana-component="switch"] {
   background-color: #cfd6d9 !important;
 }
 
@@ -967,17 +978,17 @@ button[class*="button_"][class*="secondary_"]:not([class*="critical-secondary_"]
 }
 
 /* Account row in the lower-left control panel. */
-[class*="panels_"] [class*="container_df39b2"] {
+[class*="panels_"] [class*="fitInAccount_"][aria-hidden="true"] {
   background-color: #f4f6f5 !important;
   background-image: none !important;
 }
 
-[class*="panels_"] [class*="container_df39b2"]::before,
-[class*="panels_"] [class*="container_df39b2"]::after {
+[class*="panels_"] [class*="fitInAccount_"][aria-hidden="true"]::before,
+[class*="panels_"] [class*="fitInAccount_"][aria-hidden="true"]::after {
   background-image: none !important;
 }
 
-[class*="panels_"] video[class*="account_df39b2"] {
+[class*="panels_"] [class*="fitInAccount_"][aria-hidden="true"] video {
   display: none !important;
 }
 
@@ -1021,6 +1032,21 @@ button[class*="button_"][class*="secondary_"]:not([class*="critical-secondary_"]
 
 [class*="members_"] [class*="member_"]:hover [class*="childContainer_"] {
   background: var(--me-soft);
+}
+
+/* Keep offline names readable; dim only avatars instead of the entire row. */
+[class*="members_"] [class*="member_"][class*="offline_"] {
+  opacity: 1;
+  --channels-default: var(--me-muted);
+  --interactive-normal: var(--me-muted);
+}
+
+[class*="members_"] [class*="member_"][class*="offline_"] [class*="username_"] {
+  color: var(--me-muted);
+}
+
+[class*="members_"] [class*="member_"][class*="offline_"] [class*="avatar_"] {
+  opacity: .65;
 }
 
 /* Search and results. */
